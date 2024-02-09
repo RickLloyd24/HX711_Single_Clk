@@ -16,7 +16,7 @@ This library supports all the available features on the HX711.   Gain options ar
 
 int ScaleInPins[] = {34, 35, 36};               //Processor Input Pins from Scale (maximum 8)
 
-long ScaleReadings[number_of_HX711_devices]  //Array to hold HX711 readings
+![](C:\Users\rickl\OneDrive\Documents\GitHub\HX711_Single_Clk\examples\HardwareExample.jpg)long ScaleReadings[number_of_HX711_devices]  //Array to hold HX711 readings
 
 HX711O Scales(number_of_HX711_devices);   //constructor array size
 
@@ -28,7 +28,7 @@ Scales.getData(ScaleReadings);    // If time out occurs reading is -1
 
 ## Hardware Sample
 
-![](C:\Users\rickl\AppData\Roaming\marktext\images\2024-02-09-09-43-05-image.png)
+![](C:\Users\rickl\OneDrive\Documents\GitHub\HX711_Single_Clk\examples\HardwareExample.jpg)
 
 ## Hardware Support
 
