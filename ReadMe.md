@@ -28,7 +28,7 @@ Scales.getData(ScaleReadings);    // If time out occurs reading is -1
 
 ## Hardware Sample
 
-![](C:\Users\rickl\OneDrive\Documents\GitHub\HX711_Single_Clk\examples\HardwareExample.jpg)
+![](C:\Users\rickl\OneDrive\Documents\GitHub\HX711_Single_Clk\HardwareExample.jpg)
 
 ## Hardware Support
 
