@@ -36,8 +36,20 @@ Scales.getData(ScaleReadings);    // If time out occurs reading is -1
 
 This library should support all Arduino compatible boards.  It was tested on ESP32, ESP8266 and Mega platforms.
 
+## Manual Library Install
+
+Since this library is not in the Arduino database you need to do a manual install.  The following are the instructions:
+
+1. Download the library by selecting the code button and select download zip.
+
+2. Go to the directory where you have downloaded the .zip library file.
+
+3. Extract the .zip file.
+
+4. Select the main folder (it should have the library’s name) and move it to the “libraries” folder.   It is in the Documents\Arduino\libraries folder.  You need to remove "-main" on the folder name.
+
 ## Similar libraries
 
 There are other libraries around, enjoy:
 
-- [GitHub - olkal/HX711_ADC: Arduino library for the HX711 24-bit ADC for weight scales](https://github.com/olkal/HX711_ADC)
+- [GitHub - olkal/HX711_ADC: Arduino library for the HX711 24-bit ADC for weight scales](https://github.com/olkal/HX711_ADC).
