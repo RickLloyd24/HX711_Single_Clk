@@ -6,6 +6,8 @@ This library supports all the available features on the HX711.   Gain options ar
 
 To use Channel B the gain must be set to 32.  Channel A is used if the gain is 128 or 64.
 
+The library reads the scales at a bit rate of about 25 kHz which reduces glitches when longer cables are used.
+
 ## Code Example
 
 #include <HX711_Single_Clk.h>

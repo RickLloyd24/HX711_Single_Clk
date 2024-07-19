@@ -35,6 +35,12 @@ void HX711O::begin(int clkpin, int outpin[], int Gain)  //Intialize pins, set Ga
   digitalWrite(ClkPin, LOW);   						//powerUp HX711;
 }
 
+void HX711O::Reset()                               //Reset all HX711 devices  
+{
+  digitalWrite(ClkPin, HIGH);     	 	   //Reset HX711;
+  delayMicroseconds(65);                           //Delay for HX711 to recognize power down 
+  digitalWrite(ClkPin, LOW);     	 	   //Return to normal operation
+}
 //void HX711::conversion24bit()                    //read 24 bit data, store in dataset and start the next conversion
 void HX711O::getData(long data[]) {                //getData
   uint8_t dout;  boolean TimeOutFlag[8];
@@ -53,8 +59,9 @@ void HX711O::getData(long data[]) {                //getData
   
   for (uint8_t i = 0; i < (24 + Gain); i++) {   //read 24 bit data + set Gain and start next conversion
     digitalWrite(ClkPin, HIGH);
-    delayMicroseconds(1);      
+    delayMicroseconds(40);      
     digitalWrite(ClkPin, LOW);
+    delayMicroseconds(40);      
     if (i < (24)) {
       for (int j = 0; j < numDevices; j++) {
         dout = digitalRead(DataPins[j]);

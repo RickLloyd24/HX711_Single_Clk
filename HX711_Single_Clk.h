@@ -18,6 +18,7 @@ class HX711O
   public:
 	HX711O(int SizeofArray); 		                	//constructor
 	void begin(int clkpin, int outpin[], int gain);	                //HX711 clock pin, output pin and gain
+        void Reset(void);                                               //Reset All devices                         
 	void getData(long data[]);				        //if TimeOut occurs data set to -1
   private:
 	uint8_t ClkPin; 						//HX711 Clock pin
