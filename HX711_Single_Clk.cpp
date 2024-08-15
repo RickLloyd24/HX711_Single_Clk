@@ -59,9 +59,9 @@ void HX711O::getData(long data[]) {                //getData
   
   for (uint8_t i = 0; i < (24 + Gain); i++) {   //read 24 bit data + set Gain and start next conversion
     digitalWrite(ClkPin, HIGH);
-    delayMicroseconds(40);      
+    delayMicroseconds(25);      
     digitalWrite(ClkPin, LOW);
-    delayMicroseconds(40);      
+    delayMicroseconds(25);      
     if (i < (24)) {
       for (int j = 0; j < numDevices; j++) {
         dout = digitalRead(DataPins[j]);
@@ -74,6 +74,6 @@ void HX711O::getData(long data[]) {                //getData
   }
   for (int j = 0; j < numDevices; j++) {
     data[j] = data[j] ^ 0x800000;                // flip the 24th bit 
-    if (TimeOutFlag[j] = false) data[j] = -1;
+    if (TimeOutFlag[j] == true) data[j] = -1;
   }
 }
