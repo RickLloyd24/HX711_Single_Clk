@@ -52,16 +52,16 @@ void HX711O::getData(long data[]) {                //getData
     TimeOutFlag[j] = true;
     data[j] = 0;
     dout = digitalRead(DataPins[j]);                 //check if conversion is ready
-    if (dout) {                                      
+    if (dout == 0) {                                      
       TimeOutFlag[j] = false;                        //data is ready
     }
   }  
   
   for (uint8_t i = 0; i < (24 + Gain); i++) {   //read 24 bit data + set Gain and start next conversion
     digitalWrite(ClkPin, HIGH);
-    delayMicroseconds(25);      
+    delayMicroseconds(40);                       //Max 50 microseconds
     digitalWrite(ClkPin, LOW);
-    delayMicroseconds(25);      
+    delayMicroseconds(40);                        //No Max
     if (i < (24)) {
       for (int j = 0; j < numDevices; j++) {
         dout = digitalRead(DataPins[j]);
